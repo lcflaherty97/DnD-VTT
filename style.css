@@ -36,3 +36,13 @@
     width: 75%;
     float: right;
 }
+#chat {
+    position: fixed;
+    min-height: 100%;
+    min-width: 25%;
+}
+#map {
+	position: fixed;
+	min-height: 100%;
+	min-width: 75%;
+}
