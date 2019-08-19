@@ -7,7 +7,41 @@
 </head>
 
 <body>
-	<section id="dmside"><iframe id="chat" src="https://titanembeds.com/embed/302523524679991309" frameborder="0"></iframe></section>
-  	<section id="dmmain"><iframe id="map" src="https://drive.google.com/open?id=1bp7cpQr19arvaglUBDh_vUykq9rrq2PLrp7-uivdCfE" frameborder="0"></iframe></section>
+	<section id="dmside">
+		<div id="chartab" class="tabcontent">
+	  		<iframe id="chat" src="https://titanembeds.com/embed/302523524679991309" frameborder="0">
+				<div class="tab">
+					<button class="tablinks" onclick="openWin(event, 'chartab')" id="default">Chat</button>
+				</div>
+			</iframe>
+		</div>
+	</section>
+	
+<section id="dmmain"><iframe id="map" src="https://drive.google.com/open?id=1bp7cpQr19arvaglUBDh_vUykq9rrq2PLrp7-uivdCfE" frameborder="0"></iframe></section>
+
+<script>
+function openWin(evt, sideName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(sideName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+	
+document.getElementById("default").click();
+</script>
 </body>
 </html>
