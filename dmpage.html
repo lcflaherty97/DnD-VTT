@@ -8,40 +8,66 @@
 
 <body>
 	<section id="dmside">
-		<div id="chartab" class="tabcontent">
-	  		<iframe id="chat" src="https://titanembeds.com/embed/302523524679991309" frameborder="0">
-				<div class="tab">
-					<button class="tablinks" onclick="openWin(event, 'chartab')" id="default">Chat</button>
-				</div>
-			</iframe>
+		<div class="tab">
+			<button class="sidelinks" onclick="openSide(event, 'chattab')" id="sidedefault">Chat</button>
+			<button class="sidelinks" onclick="openSide(event, 'reftab')">Ref</button>
+			<button class="sidelinks" onclick="openSide(event, 'tooltab')">5e Tools</button>
+		</div>
+		
+		<div id="chattab" class="sidecontent">
+	  		<iframe id="chat" src="https://minnit.chat/DnDVTTChat" frameborder="0"></iframe>
+		</div>
+		
+		<div id="reftab" class="sidecontent">
+			<iframe id="ref" src="https://crobi.github.io/dnd5e-quickref/preview/quickref.html" frameborder="0"></iframe>
+		</div>
+		
+		<div id="tooltab" class="sidecontent">
+			<iframe id="tool" src="https://thegiddylimit.github.io/5etools.html" frameborder="0"></iframe>
 		</div>
 	</section>
 	
-<section id="dmmain"><iframe id="map" src="https://drive.google.com/open?id=1bp7cpQr19arvaglUBDh_vUykq9rrq2PLrp7-uivdCfE" frameborder="0"></iframe></section>
+	<section id="dmmain">
+		<div class="tab">
+			<button class="mainlinks" onclick="openMain(event, 'maptab')" id="maindefault">Map</button>
+		</div>
+		
+		<div id="maptab" class="maincontent">
+			<iframe id="map" src="https://drive.google.com/open?id=1bp7cpQr19arvaglUBDh_vUykq9rrq2PLrp7-uivdCfE" frameborder="0"></iframe>
+		</div>
+	</section>
 
 <script>
-function openWin(evt, sideName) {
-  // Declare all variables
+function openMain(evt, tabName) {
   var i, tabcontent, tablinks;
-
-  // Get all elements with class="tabcontent" and hide them
-  tabcontent = document.getElementsByClassName("tabcontent");
+  tabcontent = document.getElementsByClassName("maincontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-
-  // Get all elements with class="tablinks" and remove the class "active"
-  tablinks = document.getElementsByClassName("tablinks");
+  tablinks = document.getElementsByClassName("mainlinks");
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace(" active", "");
   }
-
-  // Show the current tab, and add an "active" class to the button that opened the tab
-  document.getElementById(sideName).style.display = "block";
+  document.getElementById(tabName).style.display = "block";
   evt.currentTarget.className += " active";
 }
 	
-document.getElementById("default").click();
+function openSide(evt, tabName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("sidecontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("sidelinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(tabName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+	
+document.getElementById("sidedefault").click();
+document.getElementById("maindefault").click();
 </script>
 </body>
 </html>
