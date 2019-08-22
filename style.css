@@ -58,6 +58,11 @@
     min-height: 96%;
     min-width: 25%;
 }
+#init {
+	position: fixed;
+    min-height: 96%;
+    min-width: 25%;
+}
 #map {
 	position: fixed;
 	min-height: 96%;
