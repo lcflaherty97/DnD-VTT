@@ -53,6 +53,11 @@
     min-height: 96%;
     min-width: 25%;
 }
+#dice {
+	position: fixed;
+    min-height: 96%;
+    min-width: 25%;
+}
 #map {
 	position: fixed;
 	min-height: 96%;
