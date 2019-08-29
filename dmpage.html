@@ -37,10 +37,26 @@
 	<section id="dmmain">
 		<div class="tab">
 			<button class="mainlinks" onclick="openMain(event, 'maptab')" id="maindefault">Map</button>
+			
+			<div class=dropdown>
+				<button class="mainlinks">Characters</button>
+				<div class="dropdown-content">
+					<a button onclick="openMain(event, 'p1tab')">Joe Shmoe</button>
+					<a button onclick="openMain(event, 'p2tab')">Alex</button>
+				</div>
+			</div>
 		</div>
 		
 		<div id="maptab" class="maincontent">
 			<iframe id="map" src="https://drive.google.com/open?id=1bp7cpQr19arvaglUBDh_vUykq9rrq2PLrp7-uivdCfE" frameborder="0"></iframe>
+		</div>
+		
+		<div id="p1tab" class="maincontent">
+			<iframe id="p1" src="https://drive.google.com/open?id=1WPByBj0h2ai4ziXLHyZlHPvFfdDR9wsNXeREwRh2pKc" frameborder="0"></iframe>
+		</div>
+		
+		<div id="p2tab" class="maincontent">
+			<iframe id="p2" src="https://drive.google.com/open?id=1bxQ-OiDJQ1nciUHbtLH0GRp3PiwiSEd3bhVuw8PPCkc" frameborder="0"></iframe>
 		</div>
 	</section>
 
